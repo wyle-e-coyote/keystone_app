@@ -34,4 +34,4 @@ node_modules
 .vscode/
 
 # compiled output
-./routes/views/**/*
+routes/views/
