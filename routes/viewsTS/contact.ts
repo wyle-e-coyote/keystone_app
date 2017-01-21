@@ -8,7 +8,7 @@ module.exports = (req, res) => {
     locals.section = "contact";
     locals.enquiryTypes = Enquiry.fields.enquiryType.ops;
     locals.formData = req.body || {};
-    locals.validationErros = {};
+    locals.validationErrors = {};
     locals.enquirySubmitted = false;
 
     view.on("post", {action: "contact"}, (next) => {
@@ -16,9 +16,9 @@ module.exports = (req, res) => {
         const updater = newEnquiry.getUpdateHandler(req);
 
         updater.process(req.body, {
-            flashErrors: true,
-            fields: "name, email, phone, enquiryType, message",
             errorMessage: "There was a problem submitting your enquiry:",
+            fields: "name, email, phone, enquiryType, message",
+            flashErrors: true,
         }, (err) => {
             if (err) {
                 locals.validationErrors = err.errors;
