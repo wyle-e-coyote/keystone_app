@@ -4,9 +4,12 @@
         "target": "es5",
         "noImplicitAny": false,
         "sourceMap": true,
-        "outDir": "../views"
+        "outDir": "../../routes/views"
     },
     "include": [
-      "./"
+        "./"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }
