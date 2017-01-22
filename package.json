@@ -19,11 +19,12 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "clean": "rm -rf ./routes/views && rm -rf ./models",
+    "clean": "rm -rf ./routes && rm -rf ./models",
     "dist_clean": "rm -rf ./node_modules && npm run clean",
     "build_views": "./node_modules/.bin/tsc -p src/views",
     "build_models": "./node_modules/.bin/tsc -p src/models",
-    "build": "npm run build_views && npm run build_models",
+    "build_index": "./node_modules/.bin/tsc -p src/",
+    "build": "npm run build_index && npm run build_views && npm run build_models",
     "start": "node keystone.js"
   }
 }
